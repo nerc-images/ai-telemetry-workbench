@@ -1,7 +1,7 @@
 FROM quay.io/modh/codeserver:codeserver-ubi9-python-3.11-20250212
 
 ENV IJAVA_VERSION=1.3.0 \
-  JAVA_HOME=/usr/lib/jvm/java-17-openjdk \
+  JAVA_HOME=/usr/lib/jvm/java-21-openjdk \
   GOPATH=/usr/local/src/go
 
 USER root
@@ -27,11 +27,11 @@ RUN install -d /usr/local/opt/ijava \
   && unzip -n /tmp/ijava-$IJAVA_VERSION.zip -d /usr/local/opt/ijava \
   && python3 install.py --prefix /opt/app-root \
   && jupyter kernelspec install /opt/app-root/share/jupyter/kernels/java
-# Install java 17 and maven
+# Install java 21 and maven
 RUN dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-RUN dnf install -y java-17-openjdk-devel maven jq gh \
-  && alternatives --set java java-17-openjdk.x86_64 \
-  && alternatives --set javac java-17-openjdk.x86_64
+RUN dnf install -y java-21-openjdk-devel maven jq gh \
+  && alternatives --set java java-21-openjdk.x86_64 \
+  && alternatives --set javac java-21-openjdk.x86_64
 # Install golang dependencies for Jupyter
 RUN dnf install -y golang
 RUN go install golang.org/x/tools/cmd/goimports@latest

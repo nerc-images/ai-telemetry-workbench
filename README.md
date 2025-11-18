@@ -3,7 +3,7 @@
 An OpenShift AI Image running VSCode for Java and Go development.
 - Based on the [IJava project by SpencerPark](https://github.com/SpencerPark/IJava) on GitHub for Jupyter Lab Notebook integration with OpenJDK.
 - Also based on the [gophernotes project](https://github.com/gopherdata/gophernotes) on GitHub for Jupyter Lab Notebook integration with golang.
-- Uses java-17-openjdk-devel and maven package support.
+- Uses java-21-openjdk-devel and maven package support.
 
 Base image: [quay.io/modh/codeserver:codeserver-ubi9-python-3.11-20250212](https://quay.io/repository/modh/codeserver?tab=tags&tag=codeserver-ubi9-python-3.11-20250212)
 
@@ -21,7 +21,7 @@ Base image: [quay.io/modh/codeserver:codeserver-ubi9-python-3.11-20250212](https
 
 | System packages | Description |
 | --- | --- |
-| java-17-openjdk-devel | We provide the full Java 17 OpenJDK SDK to run and compile Java applications cloned from git in the terminal and Java inline Jupyter Notebooks. |
+| java-21-openjdk-devel | We provide the full Java 21 OpenJDK SDK to run and compile Java applications cloned from git in the terminal and Java inline Jupyter Notebooks. |
 | maven | Maven is provided for compiling, installing, and deploying Java packages to Maven Central. |
 | jq | For formatting JSON output from curl commands. |
 | gh | For submitting GitHub pull requests. |
